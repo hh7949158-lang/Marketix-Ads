@@ -20,7 +20,6 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="#" class="logo-link">
-                <!-- We include both dark-bg (white text) and light-bg (dark text) logos to swap them easily in CSS -->
                 <img src="assets/logo_dark.png" alt="Marketix Ads Logo" class="logo logo-dark-bg">
                 <img src="assets/logo_light.png" alt="Marketix Ads Logo" class="logo logo-light-bg">
             </a>
@@ -395,11 +394,11 @@
           PURPOSE: Main conversion driver. Captures sales queries and provides direct contact details.
           BEHAVIOR: Dark blue background matching hero. Split columns: left holds styled contact details list; right holds modern form with sliding label fields.
         -->
-        <section id="contact" class="contact-section section-padding dark-bg">
+        <section id="contact" class="contact-section section-padding">
             <div class="container contact-container">
                 <div class="contact-info reveal reveal-left">
                     <span class="section-subtitle text-coral">GET IN TOUCH</span>
-                    <h2 class="section-title text-white">Let's Start Your Next<br>Successful Campaign</h2>
+                    <h2 class="section-title">Let's Start Your Next<br>Successful Campaign</h2>
                     <p class="contact-description">
                         Ready to connect with your audience and drive real results? Fill out the form and our team will get back to you shortly.
                     </p>
@@ -430,9 +429,14 @@
                                 <label for="fullName" class="form-label">Full Name</label>
                                 <span class="form-error">Please enter your full name.</span>
                             </div>
-                            <div class="form-group">
-                                <input type="tel" id="phoneNumber" class="form-input" placeholder=" " required>
-                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <div class="form-group phone-group">
+                                <div class="flag-container">
+                                    <img src="https://flagcdn.com/w20/eg.png" alt="Egypt Flag" class="flag-icon">
+                                    <span class="country-code">+20</span>
+                                    <span class="arrow-down"></span>
+                                </div>
+                                <input type="tel" id="phoneNumber" class="form-input form-phone-input" placeholder=" " required>
+                                <label for="phoneNumber" class="form-label form-phone-label">Phone Number</label>
                                 <span class="form-error">Please enter a valid phone number.</span>
                             </div>
                         </div>

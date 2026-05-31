@@ -207,12 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     setTimeout(() => {
                         formParent.innerHTML = `
-                            <div class="form-success-message text-center" style="padding: 40px 0; color: #fff;">
+                            <div class="form-success-message text-center" style="padding: 40px 0; color: var(--color-text-dark);">
                                 <div class="success-icon-circle" style="width: 72px; height: 72px; border-radius: 50%; background-color: rgba(240, 80, 80, 0.1); border: 2px solid var(--color-accent-coral); color: var(--color-accent-coral); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width: 32px; height: 32px;"><polyline points="20 6 9 17 4 12"/></svg>
                                 </div>
-                                <h3 style="font-size: 1.75rem; font-family: var(--font-headings); font-weight: 700; margin-bottom: 12px; color: #fff;">Message Sent Successfully!</h3>
-                                <p style="color: rgba(255,255,255,0.7); max-width: 360px; margin: 0 auto; font-size: 0.95rem;">Thank you for contacting Marketix Ads. A campaign strategist will review your query and contact you within 24 hours.</p>
+                                <h3 style="font-size: 1.75rem; font-family: var(--font-headings); font-weight: 700; margin-bottom: 12px; color: var(--color-primary-dark);">Message Sent Successfully!</h3>
+                                <p style="color: var(--color-text-muted); max-width: 360px; margin: 0 auto; font-size: 0.95rem;">Thank you for contacting Marketix Ads. A campaign strategist will review your query and contact you within 24 hours.</p>
                             </div>
                         `;
                         formParent.style.opacity = '1';
