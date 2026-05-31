@@ -1221,6 +1221,21 @@ ul {
         max-height: 55px;
     }
     
+    .stats-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 32px 24px;
+    }
+    
+    .stat-item {
+        flex: 0 0 100%;
+        width: 100%;
+        justify-content: flex-start;
+        border-right: none !important;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
     .contact-container {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -1314,10 +1329,12 @@ ul {
 
         .stat-item {
             flex: 0 0 100%;
-            justify-content: center;
+            justify-content: flex-start;
             border-right: none !important;
             padding-left: 0;
             width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
         }
         
         .stat-info {
