@@ -223,4 +223,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /**
+     * FEATURE: Floating WhatsApp Button Reveal
+     * PURPOSE: Shows the floating WhatsApp button after scrolling down.
+     */
+    const floatingWhatsapp = document.querySelector('.floating-whatsapp');
+    const handleWhatsappScroll = () => {
+        if (floatingWhatsapp) {
+            if (window.scrollY > 300) {
+                floatingWhatsapp.classList.add('visible');
+            } else {
+                floatingWhatsapp.classList.remove('visible');
+            }
+        }
+    };
+    
+    window.addEventListener('scroll', handleWhatsappScroll);
+    handleWhatsappScroll(); // Initial check
+
 });
