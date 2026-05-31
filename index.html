@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketix Ads - Results-Driven Marketing & Communication Solutions</title>
+    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+      COMPONENT: Sticky Header/Navigation
+      PURPOSE: Provides global navigation and quick action CTA.
+      BEHAVIOR: Starts transparent, overlays the Hero dark background. Becomes sticky with white glassmorphic blur and swaps to light-theme logo on scroll.
+    -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo-link">
+                <!-- We include both dark-bg (white text) and light-bg (dark text) logos to swap them easily in CSS -->
+                <img src="assets/logo_dark.png" alt="Marketix Ads Logo" class="logo logo-dark-bg">
+                <img src="assets/logo_light.png" alt="Marketix Ads Logo" class="logo logo-light-bg">
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#clients" class="nav-link">Clients</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-secondary btn-sm header-cta">Get Started</a>
+                <!-- Mobile Menu Hamburger Button -->
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+
+        <!-- 
+          COMPONENT: Hero Section
+          PURPOSE: First section seen by users. Drives immediate value proposition and action.
+          BEHAVIOR: Dark blue background, large bold heading with fade-in animations, CTA buttons with hover micro-interactions, and a floating dashboard mockup on the right.
+        -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content reveal reveal-left">
+                    <div class="tagline-badge">
+                        <span class="badge-dot"></span>
+                        SMART COMMUNICATION. STRONGER CONNECTIONS.
+                    </div>
+                    <h1 class="hero-title">Connecting Brands.<br>Creating Opportunities.<br>Driving Results.</h1>
+                    <p class="hero-description">
+                        Marketix Ads is a results-driven marketing and communication solutions company helping brands connect with their target audience through innovative and effective campaigns.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Get Started
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#services" class="btn btn-outline">
+                            Explore Services
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual reveal reveal-right">
+                    <div class="dashboard-wrapper">
+                        <img src="assets/hero_dashboard.png" alt="Marketix Ads Campaign Dashboard Overview" class="dashboard-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          COMPONENT: Stats Bar Section
+          PURPOSE: Displays trust signals and performance metrics immediately below the fold.
+          BEHAVIOR: A dark floating card spanning the width, with hover growth effects on each metric and subtle icon glows.
+        -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-card reveal reveal-bottom">
+                    
+                    <!-- Stat 1: Campaigns Delivered -->
+                    <div class="stat-item">
+                        <div class="stat-icon-wrapper">
+                            <!-- Telegram Style Paper Plane Icon -->
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h3 class="stat-number">5M+</h3>
+                            <p class="stat-label">Campaigns Delivered</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2: Brands Served -->
+                    <div class="stat-item">
+                        <div class="stat-icon-wrapper">
+                            <!-- Building/Office Icon -->
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                                <line x1="9" y1="22" x2="9" y2="16"/>
+                                <line x1="15" y1="22" x2="15" y2="16"/>
+                                <line x1="9" y1="16" x2="15" y2="16"/>
+                                <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M12 6h.01M12 10h.01"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h3 class="stat-number">2,000+</h3>
+                            <p class="stat-label">Brands Served</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3: People Reached -->
+                    <div class="stat-item">
+                        <div class="stat-icon-wrapper">
+                            <!-- Multi-user / People Icon -->
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h3 class="stat-number">100M+</h3>
+                            <p class="stat-label">People Reached</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat 4: Avg Engagement Uplift -->
+                    <div class="stat-item">
+                        <div class="stat-icon-wrapper">
+                            <!-- Chart Line Up Icon -->
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <h3 class="stat-number">28%</h3>
+                            <p class="stat-label">Avg. Engagement Uplift</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          COMPONENT: About Us Section
+          PURPOSE: Introduces the company's identity, philosophy, and approach.
+          BEHAVIOR: White background, red subtitle, bold heading, split two-column content. Right column holds the tablet mockup with hover scale.
+        -->
+        <section id="about" class="about-section section-padding">
+            <div class="container about-container">
+                <div class="about-content reveal reveal-left">
+                    <span class="section-subtitle">ABOUT MARKETIX ADS</span>
+                    <h2 class="section-title">Results-Driven.<br>People-Focused.</h2>
+                    <p class="about-text highlight">
+                        Marketix Ads is a trusted marketing and communication solutions company specializing in helping brands connect with their target audience through innovative and effective campaigns.
+                    </p>
+                    <p class="about-text">
+                        Through a combination of technology, market insight, and dedicated support, we aim to become a reliable partner for businesses looking to strengthen their presence and improve customer engagement.
+                    </p>
+                    <div class="about-actions">
+                        <a href="#contact" class="btn btn-secondary">
+                            Learn More About Us
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-visual reveal reveal-right">
+                    <div class="tablet-wrapper">
+                        <img src="assets/about_tablet.png" alt="Analyzing analytics on a tablet with hand pointing" class="tablet-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          COMPONENT: Services Section
+          PURPOSE: Details the primary channels and capabilities offered by the agency.
+          BEHAVIOR: Light neutral background, centered heading, 3x2 responsive grid. Each service card has hover lift, colored icon container, and sleek shadow transitions.
+        -->
+        <section id="services" class="services-section section-padding bg-neutral">
+            <div class="container">
+                <div class="section-header text-center reveal reveal-bottom">
+                    <span class="section-subtitle">OUR SERVICES</span>
+                    <h2 class="section-title">Powerful Channels. Proven Impact.</h2>
+                </div>
+
+                <div class="services-grid">
+                    
+                    <!-- Service 1: Bulk SMS -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat SMS Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-sms)" />
+                                <path d="M18 24C18 20.6863 20.6863 18 24 18H40C43.3137 18 46 20.6863 46 24V38C46 41.3137 43.3137 44 40 44H32L24 49V44C20.6863 44 18 41.3137 18 38V24Z" fill="white" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <path d="M25 27H39M25 33H35" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="grad-sms" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#3b82f6"/>
+                                        <stop offset="1" stop-color="#1d4ed8"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Bulk SMS</h3>
+                        <p class="service-description">Reach your entire database instantly through secure and reliable systems.</p>
+                    </div>
+
+                    <!-- Service 2: API SMS -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat API Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-api)" />
+                                <rect x="18" y="20" width="28" height="20" rx="4" fill="white" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <path d="M22 27L25 30L22 33M42 27L39 30L42 33M30 27L34 33" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="44" cy="40" r="9" fill="#ef4444" filter="drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2))"/>
+                                <path d="M41 40H47" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="grad-api" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#a78bfa"/>
+                                        <stop offset="1" stop-color="#6d28d9"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">API SMS</h3>
+                        <p class="service-description">Seamless integration for automated messaging and real-time communication.</p>
+                    </div>
+
+                    <!-- Service 3: Mobile Ads -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat Megaphone Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-ads)" />
+                                <path d="M21 27H17C15.8954 27 15 27.8954 15 29V33C15 34.1046 15.8954 35 17 35H21V27Z" fill="white"/>
+                                <path d="M21 27L35 19V41L21 33V27Z" fill="white" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <path d="M38 26C40.5 28 40.5 32 38 34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M42 23C46.5 26 46.5 34 42 37" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="grad-ads" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#fb7185"/>
+                                        <stop offset="1" stop-color="#e11d48"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Mobile Ads</h3>
+                        <p class="service-description">Run targeted mobile ad campaigns to reach the right audience.</p>
+                    </div>
+
+                    <!-- Service 4: LBA SMS -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat Location Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-lba)" />
+                                <path d="M32 14C23.7157 14 17 20.7157 17 29C17 38 32 50 32 50S47 38 47 29C47 20.7157 40.2843 14 32 14Z" fill="white" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <circle cx="32" cy="27" r="6" fill="#059669"/>
+                                <defs>
+                                    <linearGradient id="grad-lba" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#34d399"/>
+                                        <stop offset="1" stop-color="#047857"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">LBA SMS</h3>
+                        <p class="service-description">Reach customers based on their real-time location with location-based messaging.</p>
+                    </div>
+
+                    <!-- Service 5: WhatsApp -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat WhatsApp Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-wa)" />
+                                <path d="M19.3 44.7l1.4-5.2c-1.6-2.8-2.5-6-2.5-9.3 0-10.1 8.2-18.3 18.3-18.3 4.9 0 9.5 1.9 13 5.4s5.4 8.1 5.4 13c0 10.1-8.2 18.3-18.3 18.3-3.2 0-6.3-.8-9-2.4l-5.3 1.4c-2.4.6-2.4.6-3.1-3.3zm5.8-2.6l.3.2c2.5 1.5 5.3 2.3 8.2 2.3 8.6 0 15.6-7 15.6-15.6 0-4.2-1.6-8.1-4.6-11.1s-6.9-4.6-11.1-4.6c-8.6 0-15.6 7-15.6 15.6 0 3 .8 5.9 2.4 8.4l.2.3-.9 3.4 3.6-.9zM26.2 24.3c-.3 0-.7.1-1 .3s-.6.5-.7.9c-.3.7-.4 2.1.3 3.8.7 1.8 1.9 3.4 3.4 4.8 1.4 1.4 3.1 2.6 4.9 3.2 1.7.7 3.1.6 3.8.3.4-.1.7-.4.9-.7s.3-.7.3-1v-.7c0-.2-.1-.4-.3-.5-.4-.2-2.1-1-2.4-1.1-.3-.1-.5-.1-.7.2l-1.1 1.4c-.2.2-.4.3-.7.1-.6-.3-1.9-1-3.1-2.2-1.2-1.2-1.9-2.5-2.2-3.1-.2-.3-.1-.5.1-.7l1.4-1.1c.3-.2.3-.4.2-.7-.1-.3-.9-2.1-1.1-2.4-.2-.2-.4-.2-.7-.2z" fill="white" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <defs>
+                                    <linearGradient id="grad-wa" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#4ade80"/>
+                                        <stop offset="1" stop-color="#15803d"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">WhatsApp</h3>
+                        <p class="service-description">Engage customers directly through WhatsApp with rich and instant messaging.</p>
+                    </div>
+
+                    <!-- Service 6: Short Codes -->
+                    <div class="service-card reveal reveal-bottom">
+                        <div class="service-icon-wrapper">
+                            <!-- Colorful Flat Code Tag Icon -->
+                            <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="30" fill="url(#grad-short)" />
+                                <path d="M23 26L15 32L23 38M41 26L49 32L41 38M29 40L35 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.15))"/>
+                                <defs>
+                                    <linearGradient id="grad-short" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#fbbf24"/>
+                                        <stop offset="1" stop-color="#b45309"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Short Codes</h3>
+                        <p class="service-description">Use dedicated short numbers for two-way communication and campaign tracking.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          COMPONENT: Clients Section
+          PURPOSE: Highlights the brand's client portfolio and builds authority/trust.
+          BEHAVIOR: Centered titles, 5-column responsive grid on desktop. Client logo cards have subtle gray-to-colored state transitions and border scale on hover.
+        -->
+        <section id="clients" class="clients-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal reveal-bottom">
+                    <span class="section-subtitle">OUR CLIENTS</span>
+                    <h2 class="section-title">Trusted by Leading Brands</h2>
+                </div>
+
+                <div class="clients-grid">
+                    <!-- Client 1: Carrefour -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_1.png" alt="Carrefour Logo" class="client-logo">
+                    </div>
+                    <!-- Client 2: Rabbit -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_2.png" alt="Rabbit Logo" class="client-logo">
+                    </div>
+                    <!-- Client 3: Palm Hills -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_3.png" alt="Palm Hills Logo" class="client-logo">
+                    </div>
+                    <!-- Client 4: Mountain View -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_4.png" alt="Mountain View Logo" class="client-logo">
+                    </div>
+                    <!-- Client 5: Saudi German Health -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_5.png" alt="Saudi German Health Logo" class="client-logo">
+                    </div>
+                    <!-- Client 6: Al Orman -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_6.png" alt="Al Orman Association Logo" class="client-logo">
+                    </div>
+                    <!-- Client 7: Al Morshedy -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_7.png" alt="Al Morshedy Logo" class="client-logo">
+                    </div>
+                    <!-- Client 8: As-Salam -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_8.png" alt="As-Salam Hospital Logo" class="client-logo">
+                    </div>
+                    <!-- Client 9: TMG Careers -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_9.png" alt="TMG Group Careers Logo" class="client-logo">
+                    </div>
+                    <!-- Client 10: As-Salam (Alternative) -->
+                    <div class="client-card reveal reveal-bottom">
+                        <img src="assets/clients/client_10.png" alt="As-Salam International Logo" class="client-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          COMPONENT: Contact/Lead Capture Section
+          PURPOSE: Main conversion driver. Captures sales queries and provides direct contact details.
+          BEHAVIOR: Dark blue background matching hero. Split columns: left holds styled contact details list; right holds modern form with sliding label fields.
+        -->
+        <section id="contact" class="contact-section section-padding dark-bg">
+            <div class="container contact-container">
+                <div class="contact-info reveal reveal-left">
+                    <span class="section-subtitle text-coral">GET IN TOUCH</span>
+                    <h2 class="section-title text-white">Let's Start Your Next<br>Successful Campaign</h2>
+                    <p class="contact-description">
+                        Ready to connect with your audience and drive real results? Fill out the form and our team will get back to you shortly.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <!-- Detail 1: Email -->
+                        <div class="contact-detail-item">
+                            <div class="contact-icon-box">
+                                <svg class="contact-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="detail-label">Email Us</span>
+                                <a href="mailto:Info@marketix-ads.com" class="detail-link">Info@marketix-ads.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Wrapper -->
+                <div class="contact-form-wrapper reveal reveal-right">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="fullName" class="form-input" placeholder=" " required>
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <span class="form-error">Please enter your full name.</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phoneNumber" class="form-input" placeholder=" " required>
+                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                <span class="form-error">Please enter a valid phone number.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="emailAddress" class="form-input" placeholder=" " required>
+                                <label for="emailAddress" class="form-label">Email Address</label>
+                                <span class="form-error">Please enter a valid email address.</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="companyName" class="form-input" placeholder=" " required>
+                                <label for="companyName" class="form-label">Company</label>
+                                <span class="form-error">Please enter your company name.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" class="form-input form-textarea" placeholder=" " required></textarea>
+                            <label for="message" class="form-label">Type your message...</label>
+                            <span class="form-error">Please enter a message.</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block form-submit">
+                            Send Message
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 
+      COMPONENT: Footer Section
+      PURPOSE: General information, navigation, social media icons, and copy protection.
+      BEHAVIOR: Dark blue background. Multi-column flexbox. Dynamic hover filters on social icons, active states on navigation, and legal notice at the bottom.
+    -->
+    <footer class="site-footer dark-bg">
+        <div class="container footer-grid">
+            <!-- Branding Column -->
+            <div class="footer-col branding-col">
+                <img src="assets/logo_dark.png" alt="Marketix Ads Logo" class="footer-logo">
+                <p class="footer-tagline">Connecting Brands. Creating Opportunities. Driving Results.</p>
+                <p class="footer-copyright">&copy; 2024 Marketix Ads. All rights reserved.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Links -->
+            <div class="footer-col">
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Bulk SMS</a></li>
+                    <li><a href="#services">API SMS</a></li>
+                    <li><a href="#services">Mobile Ads</a></li>
+                    <li><a href="#services">LBA SMS</a></li>
+                    <li><a href="#services">WhatsApp</a></li>
+                    <li><a href="#services">Short Codes</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact and Socials -->
+            <div class="footer-col">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul class="footer-contact-details">
+                    <li><a href="mailto:Info@marketix-ads.com" style="color: inherit; transition: var(--transition-smooth);">Info@marketix-ads.com</a></li>
+                </ul>
+                
+                <h4 class="footer-title footer-socials-title">Follow Us</h4>
+                <div class="footer-social-icons">
+                    <!-- Facebook -->
+                    <a href="#" class="social-icon-link" aria-label="Facebook">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="social-icon-link" aria-label="LinkedIn">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-icon-link" aria-label="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/>
+                        </svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="#" class="social-icon-link" aria-label="YouTube">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
