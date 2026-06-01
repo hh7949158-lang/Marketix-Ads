@@ -1504,53 +1504,239 @@ ul {
 
 /* 
   =========================================
-  COMPONENT: Floating WhatsApp Button
+  COMPONENT: Floating WhatsApp Widget (Modern & Dynamic)
   =========================================
 */
-.floating-whatsapp {
+.whatsapp-widget-container {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #22c55e; /* Vibrant WhatsApp green */
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 9999px;
     z-index: 1000;
-    cursor: pointer;
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.35);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.9);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.whatsapp-widget-container.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Floating Action Button (FAB) */
+.floating-whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #ffffff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
     text-decoration: none;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.floating-whatsapp .wa-icon {
-    width: 20px;
-    height: 20px;
+.floating-whatsapp-btn .wa-icon {
+    width: 28px;
+    height: 28px;
     fill: currentColor;
-    flex-shrink: 0;
 }
 
-.floating-whatsapp .wa-text {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    letter-spacing: -0.01em;
+.floating-whatsapp-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
 }
 
-.floating-whatsapp.visible {
+.floating-whatsapp-btn:active {
+    transform: scale(0.95);
+}
+
+/* Double Radar Pulsing Wave Animation */
+.pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(37, 211, 102, 0.3);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.ring-1 {
+    animation: radar-pulse 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+
+.ring-2 {
+    animation: radar-pulse 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+    animation-delay: 1.25s;
+}
+
+@keyframes radar-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Chat Bubble Popup Card */
+.whatsapp-chat-bubble {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 290px;
+    background-color: rgba(13, 30, 55, 0.95); /* Rich dark blue glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px) scale(0.92);
+    transform-origin: bottom right;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.whatsapp-chat-bubble.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
 }
 
-.floating-whatsapp:hover {
-    transform: translateY(-5px) scale(1.03);
-    background-color: #16a34a; /* Slightly darker green on hover */
-    box-shadow: 0 12px 28px rgba(34, 197, 94, 0.45);
+/* Close Button */
+.bubble-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.bubble-close-btn:hover {
+    color: #ffffff;
+}
+
+/* Header inside Chat Bubble */
+.bubble-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.agent-avatar-wrapper {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agent-avatar {
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Pulsing Online Dot */
+.online-indicator {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    border: 2px solid #0b192e;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.agent-status-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-name {
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.agent-status-text {
+    font-size: 0.72rem;
+    color: #22c55e;
+    font-weight: 500;
+}
+
+/* Body inside Chat Bubble */
+.bubble-body {
+    padding: 16px;
+}
+
+.bubble-body p {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 12px 0;
+}
+
+.bubble-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    transition: all 0.2s ease;
+}
+
+.bubble-cta-btn:hover {
+    background-color: #1ed760;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+@media screen and (max-width: 480px) {
+    .whatsapp-chat-bubble {
+        width: 250px;
+        bottom: 75px;
+    }
 }

@@ -224,19 +224,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * FEATURE: Floating WhatsApp Button Reveal
-     * PURPOSE: Shows the floating WhatsApp button after scrolling down.
+     * FEATURE: Floating WhatsApp Widget Reveal & Chat Bubble Auto-Popup
+     * PURPOSE: Shows the WhatsApp floating button on scroll and displays the chat bubble dynamically after a delay.
      */
-    const floatingWhatsapp = document.querySelector('.floating-whatsapp');
+    const whatsappWidget = document.getElementById('whatsappWidget');
+    const whatsappBubble = document.getElementById('whatsappBubble');
+    const closeWhatsappBubble = document.getElementById('closeWhatsappBubble');
+    let bubbleTimer = null;
+    let bubbleOpened = false;
+
     const handleWhatsappScroll = () => {
-        if (floatingWhatsapp) {
+        if (whatsappWidget) {
             if (window.scrollY > 300) {
-                floatingWhatsapp.classList.add('visible');
+                if (!whatsappWidget.classList.contains('visible')) {
+                    whatsappWidget.classList.add('visible');
+                    // Trigger the chat bubble auto-popup after a 2-second delay
+                    if (!bubbleOpened && !bubbleTimer) {
+                        bubbleTimer = setTimeout(() => {
+                            if (whatsappBubble) {
+                                whatsappBubble.classList.add('active');
+                                bubbleOpened = true;
+                            }
+                        }, 2500);
+                    }
+                }
             } else {
-                floatingWhatsapp.classList.remove('visible');
+                whatsappWidget.classList.remove('visible');
+                // Hide bubble if we scroll back up
+                if (whatsappBubble) {
+                    whatsappBubble.classList.remove('active');
+                }
+                if (bubbleTimer) {
+                    clearTimeout(bubbleTimer);
+                    bubbleTimer = null;
+                }
+                bubbleOpened = false; // allow re-trigger if they scroll down again
             }
         }
     };
+
+    if (closeWhatsappBubble && whatsappBubble) {
+        closeWhatsappBubble.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            whatsappBubble.classList.remove('active');
+        });
+    }
     
     window.addEventListener('scroll', handleWhatsappScroll);
     handleWhatsappScroll(); // Initial check
