@@ -185,6 +185,20 @@ ul {
     transform: translateY(-3px);
 }
 
+/* WhatsApp branded CTA button */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    border-color: transparent;
+    gap: 8px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
 .btn-icon {
     width: 18px;
     height: 18px;
@@ -381,8 +395,17 @@ ul {
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.15;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: var(--font-headings);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
 }
 
 .hero-description {
