@@ -241,9 +241,10 @@ ul {
 }
 
 .logo {
-    height: 38px;
+    height: 48px;
     width: auto;
     object-fit: contain;
+    transition: var(--transition-smooth);
 }
 
 /* Logo toggles based on header color scheme */
@@ -298,6 +299,10 @@ ul {
     -webkit-backdrop-filter: blur(12px);
     height: 70px;
     box-shadow: var(--shadow-sm);
+}
+
+.site-header.scrolled .logo {
+    height: 40px;
 }
 
 /* Mobile Nav Toggle Icon */
@@ -1085,7 +1090,7 @@ ul {
     }
     
     .logo {
-        height: 30px;
+        height: 38px;
     }
     
     .mobile-nav-toggle {
@@ -1286,7 +1291,7 @@ ul {
         }
         
         .logo {
-            height: 28px;
+            height: 32px;
         }
 
         .hero-title {
